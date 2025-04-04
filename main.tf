@@ -33,12 +33,5 @@ resource "aws_s3_bucket_object" "test_file" {
   bucket = aws_s3_bucket.s3_bucket.bucket
   key    = "test.txt"
   source = "test.txt"
-  acl    = "private"
-}
-
-# Make the uploaded file publicly accessible using an ACL
-resource "aws_s3_bucket_object_acl" "public_read_acl" {
-  bucket = aws_s3_bucket_object.test_file.bucket
-  key    = aws_s3_bucket_object.test_file.key
   acl    = "public-read"
 }
