@@ -29,9 +29,8 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "sse" {
 }
 
 # Upload a sample file test.txt to the S3 bucket
-resource "aws_s3_bucket_object" "test_file" {
+resource "aws_s3_object" "test_file" {
   bucket = aws_s3_bucket.s3_bucket.bucket
   key    = "test.txt"
   source = "test.txt"
-  acl    = "public-read"
 }
