@@ -5,7 +5,6 @@ provider "aws" {
 # Create an S3 bucket.
 resource "aws_s3_bucket" "s3_bucket" {
   bucket = "new-s3-bucket-vamsee"
-  acl    = "public-read"
 }
 
 # Enable versioning for the bucket
